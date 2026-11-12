@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trading Raj | Free Nifty, BankNifty &amp; Sensex Levels by Basant Raj</title>
+<meta name="description" content="Free Telegram channel with daily Nifty, BankNifty and Sensex levels, chart setups and live discussion. Education only. No paid tips.">
+<meta name="theme-color" content="#F4F7FC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trading Raj | Free Stock Market Channel">
+<meta property="og:description" content="Free daily levels for Nifty, BankNifty and Sensex. Education only. No paid tips.">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1107817035426509');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1107817035426509&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+:root{
+  --bg:#F4F7FC;--surface:#FFFFFF;--ink:#10131C;--body:#2A2F3C;--muted:#5F6878;--line:#E1E6EF;
+  --blue:#0A66FF;--blue-deep:#0050D0;--navy:#0A2A6B;--blue-tint:#E3EFFF;
+  --green:#1B6B2E;--green-dot:#2E9E47;--green-tint:#E5F5E8;
+  --red:#A12B2B;--red-dot:#D64545;--red-tint:#FDE8E8;
+  --amber:#9A4A06;--amber-tint:#FFF1DE;
+  --night:#14172A;
+  --shadow:0 1px 2px rgba(20,30,60,.05),0 6px 18px rgba(20,30,60,.06);
+  --glow:0 10px 26px rgba(10,102,255,.28);
+  --r-sm:12px;--r-md:16px;--r-lg:20px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0B1220;--surface:#131B2D;--ink:#F2F5FB;--body:#CBD3E1;--muted:#9AA5B8;--line:#243049;
+    --blue:#4D8DFF;--blue-deep:#2F73F0;--blue-tint:#172A4D;
+    --green:#7FD893;--green-dot:#4CC26A;--green-tint:#12301D;
+    --red:#F2A0A0;--red-dot:#F06B6B;--red-tint:#3A1A1A;
+    --amber:#F6B96B;--amber-tint:#3A2A12;
+    --night:#F2F5FB;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25);
+    --glow:0 10px 26px rgba(77,141,255,.25);
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  line-height:1.5;min-height:100vh;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:calc(env(safe-area-inset-bottom,0px) + 88px);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,p,ul,ol{margin:0}
+ul,ol{padding:0}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+[hidden]{display:none !important}
+.skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#fff;padding:10px 14px;border-radius:var(--r-sm);z-index:100}
+.skip:focus{left:12px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:520px;margin:0 auto;padding:36px 20px 40px;display:flex;flex-direction:column;gap:28px}
+
+.status{align-self:center;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;background:var(--green-tint);color:var(--green)}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--green-dot);position:relative}
+.status[data-state="open"] .status-dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--green-dot);opacity:.6;animation:ping 1.8s ease-out infinite}
+.status[data-state="closed"]{background:var(--red-tint);color:var(--red)}
+.status[data-state="closed"] .status-dot{background:var(--red-dot)}
+@keyframes ping{0%{transform:scale(.6);opacity:.7}100%{transform:scale(1.8);opacity:0}}
+
+.profile{text-align:center;display:flex;flex-direction:column;align-items:center}
+.avatar{width:132px;height:132px;border-radius:50%;background:var(--surface);padding:6px;box-shadow:0 10px 28px rgba(10,102,255,.22);margin-bottom:18px}
+.avatar-face{width:100%;height:100%;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff;font-weight:800;font-size:42px;letter-spacing:1px}
+.avatar-face img{width:100%;height:100%;object-fit:cover;display:block}
+h1{font-size:clamp(28px,8vw,36px);font-weight:800;letter-spacing:-.02em;text-transform:uppercase;line-height:1.1}
+.tagline{margin-top:10px;font-size:16px;font-weight:600;color:var(--blue)}
+.sub{margin-top:4px;font-size:14px;color:var(--muted)}
+
+.actions{display:flex;flex-direction:column;gap:12px;margin-top:-4px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 20px;border-radius:var(--r-md);font-weight:700;font-size:17px;text-align:center;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background-color .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.99)}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;box-shadow:var(--glow)}
+.btn-outline{background:var(--surface);color:var(--blue);border-color:var(--blue)}
+.btn-dark{background:var(--night);color:var(--bg)}
+.ico-svg,.ico svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico-svg{width:22px;height:22px;flex:none}
+
+.stats{display:flex;gap:12px}
+.stat{flex:1;min-width:0;background:var(--surface);border-radius:var(--r-md);padding:16px 8px;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-weight:800;font-size:22px;color:var(--blue);letter-spacing:-.01em}
+.stat span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+
+.intro{text-align:center;display:flex;flex-direction:column;gap:10px}
+.intro h2{font-size:clamp(23px,6.4vw,28px);font-weight:800;line-height:1.25;letter-spacing:-.01em;text-wrap:balance}
+.intro p{color:var(--muted);font-size:16px}
+.pill{align-self:center;margin-top:6px;background:var(--amber-tint);color:var(--amber) !important;border-radius:999px;padding:11px 20px;font-size:14px !important;font-weight:700}
+
+.section-title{font-size:20px;font-weight:800;margin-bottom:14px;letter-spacing:-.01em}
+
+.features{list-style:none;display:flex;flex-direction:column;gap:12px}
+.features li{display:flex;align-items:center;gap:16px;background:var(--surface);border-radius:var(--r-md);padding:16px 18px;box-shadow:var(--shadow);font-weight:600;font-size:16px}
+.ico{width:44px;height:44px;border-radius:var(--r-sm);background:var(--blue-tint);color:var(--blue);display:flex;align-items:center;justify-content:center;flex:none}
+.ico svg{width:22px;height:22px}
+
+.steps{list-style:none;display:flex;flex-direction:column;gap:0;position:relative}
+.steps li{display:flex;gap:16px;padding-bottom:22px;position:relative}
+.steps li:last-child{padding-bottom:0}
+.steps li:not(:last-child)::before{content:"";position:absolute;left:17px;top:38px;bottom:4px;width:2px;background:var(--line)}
+.step-n{width:36px;height:36px;border-radius:50%;flex:none;background:var(--blue);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+.steps strong{display:block;font-size:16px;margin-top:6px}
+.steps p{color:var(--muted);font-size:15px;margin-top:2px}
+
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--surface);border-radius:var(--r-md);box-shadow:var(--shadow);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:600;font-size:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:10px;height:10px;flex:none;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg) translateY(-2px);transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.faq details p{padding:0 18px 18px;color:var(--muted);font-size:15px}
+
+.policy{background:var(--surface);border-radius:var(--r-lg);padding:24px 22px;box-shadow:var(--shadow)}
+.policy h2{font-size:22px;font-weight:800;margin-bottom:6px}
+.policy > p{font-size:15px;color:var(--muted);margin-bottom:16px}
+.policy ol{padding-left:20px;font-size:15px;line-height:1.55;color:var(--body)}
+.policy li{margin-bottom:10px;padding-left:4px}
+.policy li:last-child{margin-bottom:0}
+
+.final{display:flex;flex-direction:column;gap:14px;text-align:center}
+.foot-line{font-size:14px;color:var(--muted)}
+.foot-line strong{color:var(--green);font-weight:700}
+.share{align-self:center;display:inline-flex;align-items:center;gap:8px;background:none;border:0;cursor:pointer;color:var(--muted);font-weight:600;font-size:14px;padding:8px 12px;border-radius:var(--r-sm)}
+.share:hover{color:var(--blue)}
+.share .ico-svg{width:18px;height:18px}
+.toast{min-height:18px;font-size:13px;color:var(--green);font-weight:600}
+
+.disclaimer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;line-height:1.65;color:var(--muted);display:flex;flex-direction:column;gap:10px}
+.disclaimer strong{color:var(--body)}
+.copy{font-size:12px}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--bg) 60%,transparent);transform:translateY(110%);transition:transform .3s ease;pointer-events:none}
+.sticky.show{transform:translateY(0);pointer-events:auto}
+.sticky .btn{max-width:488px;margin:0 auto;padding:16px 20px}
+
+@media (max-width:360px){
+  .wrap{padding-left:16px;padding-right:16px}
+  .stat b{font-size:18px}
+  .btn{font-size:16px}
+}
+@media (min-width:768px){
+  .wrap{padding-top:56px;gap:32px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<main id="main" class="wrap">
+
+  <div class="status" id="market-status" data-state="closed" role="status" aria-live="polite">
+    <span class="status-dot" aria-hidden="true"></span>
+    <span id="market-status-text">Live market updates on Telegram</span>
+  </div>
+
+  <header class="profile">
+    <div class="avatar" id="avatar">
+      <div class="avatar-face" id="avatar-face" aria-hidden="true">BR</div>
+    </div>
+    <h1>Basant Raj</h1>
+    <p class="tagline">Trading Raj · Free Stock Market Channel</p>
+    <p class="sub">Nifty · BankNifty · Sensex education</p>
+  </header>
+
+  <div class="actions">
+    <a class="btn btn-primary" id="cta-hero" data-link="channel" href="https://t.me/+me5goWkI-3tiOWRl" target="_blank" rel="noopener">
+      <svg class="ico-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L3 10.5l6 2.5 2.5 6.5 3-4.5 5 3.5z"/></svg>
+      Join Free Telegram Channel
+    </a>
+    <a class="btn btn-outline" data-link="group" href="#" target="_blank" rel="noopener" hidden>
+      <svg class="ico-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6"/><path d="M16 4.5a3.5 3.5 0 010 7M18 14c2.5.7 4 2.6 4 6"/></svg>
+      Join Telegram Group
+    </a>
+  </div>
+
+  <div class="stats" id="stats">
+    <div class="stat" data-needs="members"><b data-field="members"></b><span>Members</span></div>
+    <div class="stat" data-needs="experience"><b data-field="experience"></b><span>Experience</span></div>
+    <div class="stat"><b>100% Free</b><span>Always</span></div>
+  </div>
+
+  <section class="intro">
+    <h2>Get free daily levels for Nifty, BankNifty &amp; Sensex</h2>
+    <p>Join traders learning from daily market analysis, chart setups and live discussion.</p>
+    <p class="pill">Free to join. No paid tips. No spam.</p>
+  </section>
+
+  <section aria-labelledby="get-title">
+    <h2 class="section-title" id="get-title">What you get</h2>
+    <ul class="features">
+      <li>
+        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+        <span>Daily Nifty &amp; BankNifty levels before the market opens</span>
+      </li>
+      <li>
+        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+        <span>Chart setups explained so you learn the reasoning</span>
+      </li>
+      <li>
+        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></span>
+        <span>Purely educational. No paid tips</span>
+      </li>
+      <li data-needs="experience">
+        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <span><span data-field="experience-long"></span> of market experience</span>
+      </li>
+      <li data-needs="members">
+        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6"/><path d="M16 4.5a3.5 3.5 0 010 7M18 14c2.5.7 4 2.6 4 6"/></svg></span>
+        <span><span data-field="members"></span> members learning together</span>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="how-title">
+    <h2 class="section-title" id="how-title">How it works</h2>
+    <ol class="steps">
+      <li><span class="step-n">1</span><div><strong>Join the channel</strong><p>Tap the button and open Telegram. It takes one tap.</p></div></li>
+      <li><span class="step-n">2</span><div><strong>Read the daily levels</strong><p>Key support and resistance levels are posted for the day.</p></div></li>
+      <li><span class="step-n">3</span><div><strong>Learn and discuss</strong><p>Ask questions and share ideas with other traders in the group.</p></div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="faq-title">
+    <h2 class="section-title" id="faq-title">Common questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Is it really free?</summary>
+        <p>Yes. Joining the channel and the group costs nothing, and nothing is hidden behind a paywall.</p>
+      </details>
+      <details>
+        <summary>Do you give buy or sell tips?</summary>
+        <p>No. Everything shared is for education and learning. It is not investment advice and no profit is guaranteed.</p>
+      </details>
+      <details>
+        <summary>How do I avoid scams in trading groups?</summary>
+        <p>Admins never ask for money, OTP or passwords. If someone messages you privately claiming to be an admin and asks for any of these, do not reply and report them.</p>
+      </details>
+      <details>
+        <summary>Which markets do you cover?</summary>
+        <p>Nifty, BankNifty and Sensex. Levels and chart analysis are shared for these indices.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="policy" id="policy" aria-labelledby="policy-title">
+    <h2 id="policy-title">Community policy</h2>
+    <p>Simple rules for a safe community.</p>
+    <ol>
+      <li>Education only. Not investment advice.</li>
+      <li>Respect everyone. No abuse or hate.</li>
+      <li>No spam, ads or referral links.</li>
+      <li>No guaranteed-profit or pump-and-dump tips.</li>
+      <li>Admins never ask for money, OTP or passwords.</li>
+      <li>Rule breakers get a warning, then a ban.</li>
+    </ol>
+  </section>
+
+  <section class="final">
+    <p class="foot-line"><strong>Free forever</strong> · No spam · Education only</p>
+    <a class="btn btn-dark" id="cta-final" data-link="channel" href="https://t.me/+me5goWkI-3tiOWRl" target="_blank" rel="noopener">Join now. It’s 100% free</a>
+    <button class="share" id="share-btn" type="button">
+      <svg class="ico-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/></svg>
+      Share this page
+    </button>
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
+  </section>
+
+  <footer class="disclaimer">
+    <p><strong>Disclaimer:</strong> This channel is for educational and informational purposes only. We do not provide investment advice or guaranteed returns. Trading in the stock market involves risk. Please consult your financial advisor before making any investment decisions.</p>
+    <p id="registration" hidden></p>
+    <p class="copy">© <span id="year"></span> Basant Raj · Trading Raj</p>
+  </footer>
+</main>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a class="btn btn-primary" data-link="channel" href="https://t.me/+me5goWkI-3tiOWRl" target="_blank" rel="noopener" tabindex="-1">Join Free Telegram Channel</a>
+</div>
+
+<script>
+(() => {
+  "use strict";
+
+  /* ------------------ EDIT HERE ------------------ */
+  const CONFIG = {
+    channelUrl: "https://t.me/+me5goWkI-3tiOWRl",
+    groupUrl: "",
+    members: "",
+    experience: "",
+
+    // Google Drive photo (file ko "Anyone with the link" share rakhna)
+    photo: "https://drive.google.com/thumbnail?id=1b6IOVNFmZr_0CQZ1VWq3SFUbPsPwCzvl&sz=w400",
+
+    registration: ""
+  };
+  /* ----------------------------------------------- */
+
+  const $  = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const isSet = (v) => typeof v === "string" && v.trim() !== "";
+
+  function applyLinks() {
+    if (isSet(CONFIG.channelUrl)) {
+      $$('[data-link="channel"]').forEach((a) => (a.href = CONFIG.channelUrl));
+    }
+    const groupOk = isSet(CONFIG.groupUrl) && !CONFIG.groupUrl.includes("your_group");
+    $$('[data-link="group"]').forEach((a) => {
+      if (groupOk) { a.href = CONFIG.groupUrl; a.hidden = false; }
+      else { a.hidden = true; }
+    });
+  }
+
+  function applyFields() {
+    const values = {
+      members: CONFIG.members,
+      experience: CONFIG.experience,
+      "experience-long": CONFIG.experience
+    };
+    $$("[data-field]").forEach((el) => {
+      const v = values[el.dataset.field];
+      if (isSet(v)) el.textContent = v.trim();
+    });
+    $$("[data-needs]").forEach((el) => {
+      el.hidden = !isSet(CONFIG[el.dataset.needs]);
+    });
+  }
+
+  function applyPhoto() {
+    if (!isSet(CONFIG.photo)) return;
+    const face = $("#avatar-face");
+    const img = new Image();
+    img.alt = "Basant Raj";
+    img.referrerPolicy = "no-referrer";
+    img.onload = () => {
+      face.textContent = "";
+      face.removeAttribute("aria-hidden");
+      face.appendChild(img);
+    };
+    img.src = CONFIG.photo;
+  }
+
+  function applyRegistration() {
+    const el = $("#registration");
+    if (!el || !isSet(CONFIG.registration)) return;
+    el.textContent = CONFIG.registration.trim();
+    el.hidden = false;
+  }
+
+  function getIST() {
+    const parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Kolkata",
+      weekday: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(new Date());
+    const pick = (type) => parts.find((p) => p.type === type).value;
+    return {
+      day: pick("weekday"),
+      minutes: parseInt(pick("hour"), 10) * 60 + parseInt(pick("minute"), 10)
+    };
+  }
+
+  function updateMarketStatus() {
+    const box = $("#market-status");
+    const text = $("#market-status-text");
+    if (!box || !text) return;
+    try {
+      const { day, minutes } = getIST();
+      const weekday = !["Sat", "Sun"].includes(day);
+      const OPEN = 9 * 60 + 15;
+      const CLOSE = 15 * 60 + 30;
+      const open = weekday && minutes >= OPEN && minutes < CLOSE;
+      box.dataset.state = open ? "open" : "closed";
+      text.textContent = open
+        ? "Market is open · Live updates on Telegram"
+        : "Market closed · Next levels on Telegram";
+    } catch (err) {
+      box.dataset.state = "open";
+      text.textContent = "Live market updates on Telegram";
+    }
+  }
+
+  function setupSticky() {
+    const bar = $("#sticky");
+    const targets = [$("#cta-hero"), $("#cta-final")].filter(Boolean);
+    if (!bar || !targets.length || !("IntersectionObserver" in window)) return;
+
+    const visible = new Map();
+    const link = $("a", bar);
+
+    const refresh = () => {
+      const anyVisible = Array.from(visible.values()).some(Boolean);
+      bar.classList.toggle("show", !anyVisible);
+      bar.setAttribute("aria-hidden", anyVisible ? "true" : "false");
+      link.tabIndex = anyVisible ? -1 : 0;
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => visible.set(e.target, e.isIntersecting));
+      refresh();
+    });
+
+    targets.forEach((t) => { visible.set(t, true); io.observe(t); });
+  }
+
+  function setupShare() {
+    const btn = $("#share-btn");
+    const toast = $("#toast");
+    if (!btn) return;
+
+    const say = (msg) => {
+      toast.textContent = msg;
+      clearTimeout(say.t);
+      say.t = setTimeout(() => (toast.textContent = ""), 2500);
+    };
+
+    btn.addEventListener("click", async () => {
+      const data = {
+        title: "Trading Raj | Free Stock Market Channel",
+        text: "Free daily Nifty, BankNifty and Sensex levels. Education only.",
+        url: location.href
+      };
+      try {
+        if (navigator.share) { await navigator.share(data); return; }
+        await navigator.clipboard.writeText(data.url);
+        say("Link copied");
+      } catch (err) {
+        if (err && err.name === "AbortError") return;
+        say("Could not share. Copy the link from the address bar.");
+      }
+    });
+  }
+
+  /* Meta Pixel: Lead event on Telegram join click */
+  function setupPixelEvents() {
+    $$('[data-link="channel"],[data-link="group"]').forEach((a) => {
+      a.addEventListener("click", () => {
+        try { if (window.fbq) fbq("track", "Lead"); } catch (e) {}
+      });
+    });
+  }
+
+  function init() {
+    applyLinks();
+    applyFields();
+    applyPhoto();
+    applyRegistration();
+
+    const year = $("#year");
+    if (year) year.textContent = new Date().getFullYear();
+
+    updateMarketStatus();
+    setInterval(updateMarketStatus, 60 * 1000);
+
+    setupSticky();
+    setupShare();
+    setupPixelEvents();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
